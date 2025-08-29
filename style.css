@@ -1,0 +1,82 @@
+@keyframes gradienteAnimado {
+    0% {
+        background: var(--cor-gradiente-preto);
+    }
+    50% {
+        background: linear-gradient(113deg, #000 0%, #333 44.96%, #333 100%);
+    }
+    100% {
+        background: var(--cor-gradiente-preto);
+    }
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 21px 18px 21px;
+    animation: gradienteAnimado 8s ease-in-out infinite;
+    height: 100vh;
+    flex-direction: column;
+}
+#botao-palavrachave {
+    display: flex;
+    padding: 1.25rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    border-radius: 0.5rem;
+    border: none;
+    background: var(--cor-destaque);
+    color: #000;
+    font-size: 2.5rem;
+    font-weight: 500;
+    line-height: normal;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+#botao-palavrachave:hover {
+    background: #d1124f;  /* Cor mais escura ao passar o mouse */
+    transform: translateY(-2px);  /* Efeito de levitação */
+}
+#entrada-de-texto {
+    display: flex;
+    height: 12rem;
+    padding: 1.4rem 2.5rem 2.5rem 2.5rem;
+    align-items: flex-start;
+    gap: 0.625rem;
+    align-self: stretch;
+    border-radius: 0.625rem;
+    background: #FFF;
+    font-size: 2rem;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+#entrada-de-texto:focus-within {
+    border-color: var(--cor-destaque); /* Adiciona a borda colorida ao focar */
+    box-shadow: 0 0 10px rgba(237, 20, 91, 0.5); /* Sombra suave */
+}
+#resultado-palavrachave {
+    display: flex;
+    border-radius: 0.625rem;
+    align-self: stretch;
+    color: var(--cor-destaque);
+    font-size: 2.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    max-width: 100%;
+    max-height: 50vh;
+    overflow: auto;
+    padding: 1rem;
+    background: rgba(237, 20, 91, 0.1); /* Fundo sutil */
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
